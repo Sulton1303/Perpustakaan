@@ -29,4 +29,27 @@ class BukuController extends Controller
         Buku::create($validasi);
         return redirect('/buku');
     }
+
+    public function edit($id)
+    {
+        $buku = Buku::find($id);
+        return view('edit-buku', compact('buku'));
+    }
+
+    public function update(Request $request, $id) 
+    {
+        $validasi = $request->validate([
+            'judul' => 'required|string|sometimes|max:255',
+            'pengarang' => 'required|string|sometimes|max:255',
+            'penerbit' => 'required|string|sometimes|max:255',
+        ]);
+        Buku::where('id', $id)->update($validasi);
+        return redirect('/buku');
+    }
+
+    public function destroy($id)
+    {
+        Buku::destroy($id);
+        return redirect('/buku');
+    }
 }

@@ -11,6 +11,7 @@
                 <th>Judul</th>
                 <th>Pengarang</th>
                 <th>Penerbit</th>
+                <th>Opsi</th>
             </tr>
         </thead>
 
@@ -23,6 +24,14 @@
                     <td>{{ $buku->judul }}</td>
                     <td>{{ $buku->pengarang }}</td>
                     <td>{{ $buku->penerbit }}</td>
+                    <td>
+                        <a href="/edit-buku/{{ $buku->id }}"><button>Edit</button></a>
+                        <form action="/hapus-buku/{{ $buku->id }}" method="POST" style="display:inline;"
+                            onsubmit="return confirm('Apakah Anda yakin ingin menghapus buku ini?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Hapus</button>
+                    </td>
                 </tr>
                 @endforeach
             @endif
