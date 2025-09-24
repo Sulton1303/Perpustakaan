@@ -1,0 +1,435 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #8b0000 0%, #a0522d 50%, #8b4513 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container untuk content utama */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation Styles */
+nav {
+    background: linear-gradient(90deg, #8b0000 0%, #a52a2a 50%, #8b0000 100%);
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li a:hover:before {
+    left: 100%;
+}
+
+/* Main Content Styles */
+main {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 0 auto;
+    max-width: 1200px;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* Typography */
+h1 {
+    color: #8b0000;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #8b0000, #a52a2a, #8b0000);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Button Styles */
+button,
+.btn {
+    background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+    margin: 10px 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
+    background: linear-gradient(135deg, #a52a2a 0%, #8b0000 100%);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+/* Container untuk tombol tambah dan tabel */
+.table-container {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+/* Style untuk div yang berisi tombol tambah buku - menggunakan selector yang lebih spesifik */
+main > div:first-child {
+    text-align: center;
+    margin-bottom: 0;
+    background: white;
+    padding: 20px 20px 0 20px;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 30px auto 0 auto;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+table thead {
+    background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+}
+
+table thead th {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 18px 15px;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+table tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+table tbody tr:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(139, 0, 0, 0.05),
+        rgba(165, 42, 42, 0.05)
+    );
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+table tbody td {
+    padding: 15px;
+    text-align: center;
+    border: none;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+table tbody td:first-child {
+    font-weight: 600;
+    color: #8b0000;
+    text-align: left;
+    padding-left: 20px;
+}
+
+table tbody td:last-child {
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Button alignment dalam tabel */
+table tbody td button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px;
+    padding: 8px 16px;
+    font-size: 14px;
+    min-width: 70px;
+    background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+table tbody td form {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px;
+}
+
+table tbody td form button {
+    margin: 0;
+}
+
+/* Form Styles */
+form {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+    border: 2px solid rgba(139, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #8b0000;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #8b0000;
+    background: white;
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Action Buttons Container */
+.action-buttons {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        margin: 10px;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .table-container {
+        margin: 20px auto;
+    }
+
+    main > div:first-child {
+        padding: 15px 15px 0 15px;
+        margin: 20px auto 0 auto;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    table thead th,
+    table tbody td {
+        padding: 10px 8px;
+    }
+
+    table tbody td:first-child {
+        padding-left: 10px;
+    }
+
+    table tbody td button {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 60px;
+    }
+
+    form {
+        padding: 25px;
+        margin: 20px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 11px;
+    }
+
+    table tbody td button {
+        padding: 5px 8px;
+        font-size: 11px;
+        min-width: 50px;
+        margin: 1px;
+    }
+
+    button,
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+        margin: 5px 2px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Animation untuk loading */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+table {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Hover effects untuk form */
+form:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Special styling untuk pesan "Tidak Ada Data" */
+table tbody tr td:only-child {
+    color: #8b0000;
+    font-style: italic;
+    font-size: 16px;
+    padding: 30px;
+    background: linear-gradient(
+        45deg,
+        rgba(139, 0, 0, 0.05),
+        rgba(165, 42, 42, 0.05)
+    );
+}
